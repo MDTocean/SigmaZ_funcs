@@ -114,9 +114,8 @@ def SigmaZ_diag_ReadData(
             salt_vars_str=dir_vars+"*"+file_str_identifier+"*."+salt_var+".nc"
             files_timestep+=glob(f"{salt_vars_str}")
             if dmgetout: print(f"{'dmget '+salt_vars_str+' &'}")
-        if dmgetout: return [],[],[],[],[],[],[],[],[],[]
-        else:
-            print(f"{'error: variable-strings must be provided either for rho or for T&S'}")
+        
+    if dmgetout: return [],[],[],[],[],[],[],[],[],[]
     
     ########################
     ### If a zarr_dir is given, modify the list of files to read to/write from there instead:
